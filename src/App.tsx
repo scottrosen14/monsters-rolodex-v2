@@ -3,7 +3,7 @@ import {useState, useEffect, ChangeEvent} from 'react';
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 import './App.css';
-import {getData} from "./data.utils";
+import {getData} from "./utils/data.utils";
 
 export interface Monster {
   id: string;
@@ -21,6 +21,7 @@ const App = () => {
       const users = await getData<Monster[]>('https://jsonplaceholder.typicode.com/users')
       setMonsters(users);
     }
+    fetchUsers();
   }, []);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-export const getData = async (url: string): Promise<T> => {
+export const getData = async <T>(url: string): Promise<T> => {
     const res = await fetch(url);
     return await res.json();
 };
